@@ -11,7 +11,7 @@ public class Account {
     // instance variables
     private String id;
     private String name;
-    private int balance = 0; // instance variable with default initial value
+    private double balance = 0; // instance variable with default initial value
 
     // Account constructor that receives two parameters, parametrized constructor
     public Account(String id, String name) {
@@ -21,7 +21,7 @@ public class Account {
     }
 
     // Account constructor that receives three parameters, parametrized constructor
-    public Account(String id, String name, int balance) {
+    public Account(String id, String name, double balance) {
         this.id = id; // this.id is the instance variable and id is the parameter sent from the main method
         this.name = name; // this.name is the instance variable and name is the parameter sent from the main method
         this.balance = balance; // this.balance is the instance variable and balance is the parameter sent from the main method
@@ -41,16 +41,16 @@ public class Account {
         return name;
     }
     // the purpose of this method is to return the balance of the account
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
     // the purpose of this method is to add money to the account
-    public int credit(int amount) {
+    public double credit(double amount) {
         balance = balance + amount;
         return balance;
     }
     // the purpose of this method is to withdraw money from the account
-    public int debit(int amount) {
+    public double debit(double amount) {
         if (amount <= balance) {
             balance = balance - amount;
         } else {
@@ -62,7 +62,7 @@ public class Account {
     // the purpose of this method is to transfer money from Acc1 to Acc2
     // "another" is a placeholder for Acc2 and "amount" is a placeholder for 1000
     // in this case Account is referencing the class located in Account.java
-    public int transferTo(Account another, int amount) {
+    public double transferTo(Account another, double amount) {
         /*
         * the reason Acc1 is being used is that the method is in
         * the Account class and Acc1 is an object of the Account class

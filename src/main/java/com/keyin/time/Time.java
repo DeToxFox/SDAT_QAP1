@@ -1,7 +1,7 @@
 package com.keyin.time;
 
 /*
- * Project: QAP1
+ * Project: QAP1 Problem #2 The Time Class
  * Course Name: Software Design, Architecture, Testing
  * Written by: David Turner
  * Due Date: February 7, 2023

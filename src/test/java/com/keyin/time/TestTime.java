@@ -121,7 +121,3 @@ public class TestTime {
     }
 
 }
-
-//        // Displaying the next second for t1 and previous second for t2
-
-//        System.out.println("Time(t2) previous second: " + t2.previousSecond().toString()+"\n");

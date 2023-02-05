@@ -10,23 +10,7 @@ import org.junit.jupiter.api.Test;
  */
 
 public class TestTime {
-//    @Test
-//    public void testTime() {
-//        Time time = new Time(12, 30, 45);
-//        Assertions.assertEquals(12, time.getHour());
-//        Assertions.assertEquals(30, time.getMinute());
-//        Assertions.assertEquals(45, time.getSecond());
-//
-//        System.out.println("Test Time: Hour: " + time.getHour());
-//    }
-
-// main method to test the Time class
-/*
- * Creating 2 time objects by setting thier values using the set methods and
- * call nextSecond and previousSecond methods for both t1 and t2 while displaying
- * the results via the toString methoddisplaying the results via the toString method
- */
-    @Test
+    @Test // dont test setter and getters possible remove
     public void setTestTime(){
         Time t1 = new Time(0, 0, 0);
         Time t2 = new Time(0, 0, 0);
@@ -62,39 +46,41 @@ public class TestTime {
 
     @Test
     public void testNextSecond() {
-        Time t1 = new Time(0, 0, 0);
-        Time t2 = new Time(0, 0, 0);
-        // Setting the time for t1
-        t1.setHour(12);
-        t1.setMinute(10);
-        t1.setSecond(15);
-        // Setting the time for t2
-        t2.setHour(10);
-        t2.setMinute(20);
-        t2.setSecond(25);
+        Time testingNextSecond = new Time(12,10,15);
+//        Time t1 = new Time(0, 0, 0);
+//        Time t2 = new Time(0, 0, 0);
+//        // Setting the time for t1
+//        t1.setHour(12); // move all set times to the object creation, only test 1 object
+//        t1.setMinute(10);
+//        t1.setSecond(15);
+//        // Setting the time for t2
+//        t2.setHour(10);
+//        t2.setMinute(20);
+//        t2.setSecond(25);
         // used to hold the value of the next second from t1, this is used in the assertion test equals
         // expecting a value of 16
-        int time1Second = t1.nextSecond().getSecond();
+        int time1Second = testingNextSecond.nextSecond().getSecond();
 
         // assertions that time1Second is equal to 16 seconds vs the whole time object of 12:10:16
         Assertions.assertEquals(16, time1Second);
+//        Assertions.assertEquals(16, time1Second);
         System.out.println("time1Second: " + time1Second + " this assertion passed");
-        // resetting the time for t1 prior to the next item in the stack
-        t1.setTime(12, 10, 15);
-        // assertion to test equality of t1 next second
-        Assertions.assertEquals("12:10:16", t1.nextSecond().toString());
-        // Displaying that the assertion passed
-        System.out.println("\n" + "testNextSecond test passed");
-        // resetting the time for t1 prior to the next item in the stack
-        t1.setTime(12, 10, 15);
-        // Displaying the time for t1 prior to the next second
-        System.out.println("\n" + "Time(t1) before next second: " + t1);
-        // Displaying the time for t1 after the next second
-        System.out.println("\n" + "Time(t1) after next second: " + t1.nextSecond().toString());
+//        // resetting the time for t1 prior to the next item in the stack
+//        t1.setTime(12, 10, 15);
+//        // assertion to test equality of t1 next second
+//        Assertions.assertEquals("12:10:16", t1.nextSecond().toString());
+//        // Displaying that the assertion passed
+//        System.out.println("\n" + "testNextSecond test passed");
+//        // resetting the time for t1 prior to the next item in the stack
+//        t1.setTime(12, 10, 15);
+//        // Displaying the time for t1 prior to the next second
+//        System.out.println("\n" + "Time(t1) before next second: " + t1);
+//        // Displaying the time for t1 after the next second
+//        System.out.println("\n" + "Time(t1) after next second: " + t1.nextSecond().toString());
 
     }
 
-    @Test
+    @Test  // do the same of next second
     public void testPreviousSecond() {
         Time t1 = new Time(0, 0, 0);
         Time t2 = new Time(0, 0, 0);

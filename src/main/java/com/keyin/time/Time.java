@@ -45,12 +45,6 @@ public class Time {
         this.second = second;
     }
 
-    /*
-     * IllegalArgumentException is a built in exception handler that is
-     * thrown when an argument is not valid for the method,
-     * if they are valid then the values are assigned to the instance variables
-     * this.hour = hour, this.minute = minute, this.second = second
-     */
     public void setTime(int hour, int minute, int second) {
         if (hour < 00 || hour > 23) {
             throw new IllegalArgumentException("Hour must be between 0 and 23");

@@ -19,7 +19,7 @@ public class TestTime {
         // assertions that time1Second is equal to 16 seconds vs the whole time object of 12:10:16
         Assertions.assertEquals(16, timeFwd1Second);
 
-        System.out.println("Moving time forward 1 second to " + timeFwd1Second + " seconds" + ", this assertion passed");
+        System.out.println("Moving time forward 1 second to " + timeFwd1Second + " seconds" + ", this assertion passed \n");
     }
 
     @Test  // do the same of next second
@@ -31,7 +31,7 @@ public class TestTime {
         // assertion to test equality of t1 next second
         Assertions.assertEquals(24, timePrev1Second);
 
-        System.out.println("Moving time backward 1 second to " + timePrev1Second + " seconds" + ", this assertion passed");
+        System.out.println("Moving time backward 1 second to " + timePrev1Second + " seconds" + ", this assertion passed \n");
 
     }
 
@@ -47,7 +47,18 @@ public class TestTime {
         // assertion to test equality of t1 next second
         Assertions.assertEquals("23:59:59", testingSetTime.toString());
 
-        System.out.println("testingSetTime after calling setTime(23, 59, 59) = " + testingSetTime + ", this assertion passed");
+        System.out.println("testingSetTime after calling setTime(23, 59, 59) = " + testingSetTime + ", this assertion passed \n");
+    }
+
+    @Test // Test the toString method for the time object
+    public void testToString() {
+        Time testingToString = new Time(12, 10, 15);
+
+        String timeToString = testingToString.toString();
+
+        Assertions.assertTrue(timeToString.equals("12:10:15"));
+
+        System.out.println("Testing toString() in the Time class= " + timeToString + ", this assertion passed \n");
     }
 
 }

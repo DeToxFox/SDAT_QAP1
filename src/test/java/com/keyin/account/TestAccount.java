@@ -10,21 +10,21 @@ import org.junit.jupiter.api.Test;
 public class TestAccount {
     @Test
     public void testTransfer() {
-        Account Acc1 = new Account("1", "Account 1", 5000.00);
-        Account Acc2 = new Account("2","Account 2", 4000.00);
+        Account account1 = new Account("1", "Account 1", 5000.00);
+        Account account2 = new Account("2","Account 2", 4000.00);
 
-        Acc1.transferTo(Acc2, 1000.00);
+        account1.transferTo(account2, 1000.00);
 
-        Assertions.assertTrue(Acc2.getBalance() == 5000.00);
+        Assertions.assertTrue(account2.getBalance() == 5000.00);
         System.out.println("testTransfer test passed");
-        System.out.println("Test Transfer: accountToCredit (Acc2) balance: " + Acc2.getBalance());
-        System.out.println("Test Transfer: accountToDebit (Acc1) balance: " + Acc1.getBalance() + "\n");
+        System.out.println("Test Transfer: accountToCredit (Acc2) balance: " + account2.getBalance());
+        System.out.println("Test Transfer: accountToDebit (Acc1) balance: " + account1.getBalance() + "\n");
     }
 
     @Test
     public void testDebit() {
         Account accountToDebit = new Account("1", "accountToDebit", 5000.00);
-        Account accountToCredit = new Account("2","accountToCredit", 4000.00);
+//        Account accountToCredit = new Account("2","accountToCredit", 4000.00);
 
         accountToDebit.debit(1230.00);
 
@@ -35,7 +35,7 @@ public class TestAccount {
 
     @Test
     public void testCredit() {
-        Account accountToDebit = new Account("1", "accountToDebit", 5000.00);
+//        Account accountToDebit = new Account("1", "accountToDebit", 5000.00);
         Account accountToCredit = new Account("2","accountToCredit", 4000.00);
 
         accountToCredit.credit(1230.00);
@@ -47,16 +47,16 @@ public class TestAccount {
 
     @Test
     public void testTransferLowBalance() {
-        Account Acc1 = new Account("1", "Account 1", 5000.00);
-        Account Acc2 = new Account("2","Account 2", 4000.00);
+        Account acc1 = new Account("1", "Account 1", 5000.00);
+        Account acc2 = new Account("2","Account 2", 4000.00);
         // creating an Assert statement to test if the transferTo method is working correctly with error handling
-        Acc1.transferTo(Acc2, 60000.00);
+        acc1.transferTo(acc2, 60000.00);
 
-        Assertions.assertFalse(Acc2.getBalance() == 64000.00);
+        Assertions.assertFalse(acc2.getBalance() == 64000.00);
 
         System.out.println("testTransferLowBalance test passed");
-        System.out.println("Low Balance: accountToDebit balance: " + Acc1.getBalance());
-        System.out.println("Low Balance: accountToCredit balance: " + Acc2.getBalance() + "\n");
+        System.out.println("Low Balance: accountToDebit balance: " + acc1.getBalance());
+        System.out.println("Low Balance: accountToCredit balance: " + acc2.getBalance() + "\n");
     }
 
     @Test
